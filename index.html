@@ -1,0 +1,216 @@
+/* ====================
+   General Reset
+==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====================
+   Body & Background
+==================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+
+  /* fallback solid color */
+  background-color: #111;
+
+  /* Background image + animated gradient overlay */
+  background-image:
+    linear-gradient(120deg, rgba(0,204,153,0.5), rgba(30,144,255,0.5)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+
+  /* Text color */
+  color: #eee;
+
+  /* Animate the gradient */
+  animation: gradientShift 15s ease infinite;
+
+  /* Smooth color transition */
+  transition: color 0.5s ease;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%, center;
+  }
+  50% {
+    background-position: 100% 50%, center;
+  }
+  100% {
+    background-position: 0% 50%, center;
+  }
+}
+
+/* ====================
+   Container
+==================== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ====================
+   Hero Section
+==================== */
+.hero {
+  background: linear-gradient(-45deg, #00ffcc, #1e90ff, #000, #00cc99);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+
+  /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  color: #00ffcc;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+}
+
+/* ====================
+   Sections (About, Portfolio, Contact)
+==================== */
+.section {
+  padding: 60px 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ====================
+   Portfolio Section
+==================== */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.portfolio-item {
+  flex: 1 1 calc(33.333% - 20px);
+  background: #fff;
+  padding: 40px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #000;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #00ffcc;
+}
+
+/* ====================
+   Contact Section
+==================== */
+.contact p {
+  margin: 10px 0;
+  color: #fff;
+}
+
+.contact a {
+  color: #00cc99;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  font-weight: bold;
+  background: #00cc99;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 204, 153, 0.3);
+  background: #00b38f;
+}
+
+/* ====================
+   Footer
+==================== */
+.footer {
+  background: rgba(0, 0, 0, 0.6);
+  color: #aaa;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* ====================
+   Links
+==================== */
+a, a:hover {
+  color: #00cc99;
+}
+
+/* ====================
+   Responsive
+==================== */
+@media (max-width: 768px) {
+  .portfolio-item {
+    flex: 1 1 100%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
